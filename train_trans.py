@@ -435,6 +435,15 @@ def main(unused_argv):
                 input_length=FLAGS.input_length, data_desync=FLAGS.data_desync)
         test_data = data_utils.Dataset(data_path=FLAGS.data_path, split="test",
                 input_length=FLAGS.input_length, data_desync=FLAGS.data_desync)
+        
+    # 1. 增加 ASCADv2 的判断分支
+    elif FLAGS.dataset == 'ASCADv2':
+        # ASCADv2 (STM32) 通常攻击第 0 个字节，请根据你的具体数据集确认
+        target_byte_idx = 1 
+        train_data = data_utils.Dataset(data_path=FLAGS.data_path, split="train", 
+                input_length=FLAGS.input_length, data_desync=FLAGS.data_desync, target_byte=target_byte_idx)
+        test_data = data_utils.Dataset(data_path=FLAGS.data_path, split="test",
+                input_length=FLAGS.input_length, data_desync=FLAGS.data_desync, target_byte=target_byte_idx)
 
     elif FLAGS.dataset == 'CHES20':
         if FLAGS.do_train:
@@ -463,6 +472,8 @@ def main(unused_argv):
 
     if FLAGS.dataset == 'ASCAD':
         chk_name = 'trans_long'
+    elif FLAGS.dataset == 'ASCADv2':
+        chk_name = 'trans_ascadv2' # 给 checkpoints 起个新名字
     elif FLAGS.dataset == 'CHES20':
         chk_name = 'trans_long'
     else:
@@ -494,7 +505,7 @@ def main(unused_argv):
             nsamples = FLAGS.max_eval_batch*FLAGS.eval_batch_size
         else:
             nsamples = test_data.num_samples
-        if FLAGS.dataset == 'ASCAD':
+        if FLAGS.dataset == 'ASCAD' or FLAGS.dataset == 'ASCADv2': # 增加 ASCADv2:
             plaintexts = test_data.plaintexts[:nsamples]
             keys = test_data.keys[:nsamples]
         elif FLAGS.dataset == 'CHES20':
@@ -503,7 +514,7 @@ def main(unused_argv):
 
         key_rank_list = []
         for i in range(100):
-            if FLAGS.dataset == 'ASCAD':
+            if FLAGS.dataset == 'ASCAD' or FLAGS.dataset == 'ASCADv2': # 增加 ASCADv2:
                 key_ranks = evaluation_utils.compute_key_rank(test_scores, plaintexts, keys)
             elif FLAGS.dataset == 'CHES20':
                 key_ranks = evaluation_utils_ches20.compute_key_rank(test_scores, nonces, keys)

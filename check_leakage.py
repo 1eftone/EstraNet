@@ -1,0 +1,135 @@
+import h5py
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+
+# --- 配置 ---
+# 使用你的 ASCADv2 提取版数据集路径
+DATA_PATH = "/home/e240023/EstraNet/datasets/ascadv2-extracted.h5" 
+NUM_TRACES = 5000  # 不需要跑全量，5000 条足够看清泄露了
+TRACE_START = 0
+TRACE_END = 15000  # 如果内存不够，可以改小，比如 5000
+
+# S-box 表
+SBOX = np.array([
+    0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5, 0x30, 0x01, 0x67, 0x2b, 0xfe, 0xd7, 0xab, 0x76,
+    0xca, 0x82, 0xc9, 0x7d, 0xfa, 0x59, 0x47, 0xf0, 0xad, 0xd4, 0xa2, 0xaf, 0x9c, 0xa4, 0x72, 0xc0,
+    0xb7, 0xfd, 0x93, 0x26, 0x36, 0x3f, 0xf7, 0xcc, 0x34, 0xa5, 0xe5, 0xf1, 0x71, 0xd8, 0x31, 0x15,
+    0x04, 0xc7, 0x23, 0xc3, 0x18, 0x96, 0x05, 0x9a, 0x07, 0x12, 0x80, 0xe2, 0xeb, 0x27, 0xb2, 0x75,
+    0x09, 0x83, 0x2c, 0x1a, 0x1b, 0x6e, 0x5a, 0xa0, 0x52, 0x3b, 0xd6, 0xb3, 0x29, 0xe3, 0x2f, 0x84,
+    0x53, 0xd1, 0x00, 0xed, 0x20, 0xfc, 0xb1, 0x5b, 0x6a, 0xcb, 0xbe, 0x39, 0x4a, 0x4c, 0x58, 0xcf,
+    0xd0, 0xef, 0xaa, 0xfb, 0x43, 0x4d, 0x33, 0x85, 0x45, 0xf9, 0x02, 0x7f, 0x50, 0x3c, 0x9f, 0xa8,
+    0x51, 0xa3, 0x40, 0x8f, 0x92, 0x9d, 0x38, 0xf5, 0xbc, 0xb6, 0xda, 0x21, 0x10, 0xff, 0xf3, 0xd2,
+    0xcd, 0x0c, 0x13, 0xec, 0x5f, 0x97, 0x44, 0x17, 0xc4, 0xa7, 0x7e, 0x3d, 0x64, 0x5d, 0x19, 0x73,
+    0x60, 0x81, 0x4f, 0xdc, 0x22, 0x2a, 0x90, 0x88, 0x46, 0xee, 0xb8, 0x14, 0xde, 0x5e, 0x0b, 0xdb,
+    0xe0, 0x32, 0x3a, 0x0a, 0x49, 0x06, 0x24, 0x5c, 0xc2, 0xd3, 0xac, 0x62, 0x91, 0x95, 0xe4, 0x79,
+    0xe7, 0xc8, 0x37, 0x6d, 0x8d, 0xd5, 0x4e, 0xa9, 0x6c, 0x56, 0xf4, 0xea, 0x65, 0x7a, 0xae, 0x08,
+    0xba, 0x78, 0x25, 0x2e, 0x1c, 0xa6, 0xb4, 0xc6, 0xe8, 0xdd, 0x74, 0x1f, 0x4b, 0xbd, 0x8b, 0x8a,
+    0x70, 0x3e, 0xb5, 0x66, 0x48, 0x03, 0xf6, 0x0e, 0x61, 0x35, 0x57, 0xb9, 0x86, 0xc1, 0x1d, 0x9e,
+    0xe1, 0xf8, 0x98, 0x11, 0x69, 0xd9, 0x8e, 0x94, 0x9b, 0x1e, 0x87, 0xe9, 0xce, 0x55, 0x28, 0xdf,
+    0x8c, 0xa1, 0x89, 0x0d, 0xbf, 0xe6, 0x42, 0x68, 0x41, 0x99, 0x2d, 0x0f, 0xb0, 0x54, 0xbb, 0x16
+])
+
+# 汉明重量表 (0-255)
+HW = np.array([bin(x).count('1') for x in range(256)])
+
+def calculate_cpa(traces, intermediates):
+    """计算 traces 和中间值 HW 的皮尔逊相关系数"""
+    n = len(traces)
+    
+    # 计算 HW
+    hws = HW[intermediates] # Shape: (n,)
+    
+    # 归一化 (减均值)
+    traces_centered = traces - np.mean(traces, axis=0)
+    hws_centered = hws - np.mean(hws)
+    
+    # 分子：协方差
+    numerator = np.dot(hws_centered, traces_centered)
+    
+    # 分母：方差乘积的平方根
+    # sum((x-mean_x)^2)
+    var_traces = np.sum(traces_centered ** 2, axis=0)
+    var_hws = np.sum(hws_centered ** 2)
+    
+    denominator = np.sqrt(var_traces * var_hws)
+    
+    # 避免除以 0
+    denominator[denominator == 0] = 1.0
+    
+    correlation = numerator / denominator
+    return correlation
+
+def main():
+    if not os.path.exists(DATA_PATH):
+        print(f"Error: 文件 {DATA_PATH} 不存在")
+        return
+
+    print(f"[*] Loading {NUM_TRACES} traces from {DATA_PATH}...")
+    try:
+        f = h5py.File(DATA_PATH, "r")
+        # 读取 Profiling 组的数据
+        traces = f['Profiling_traces']['traces'][:NUM_TRACES, TRACE_START:TRACE_END]
+        # 转换为 float32 防止溢出
+        traces = traces.astype(np.float32)
+        
+        metadata = f['Profiling_traces']['metadata']
+        
+        # 兼容不同 metadata 结构
+        # 有些是 metadata['plaintext'], 有些是 metadata[i]['plaintext']
+        # 这里假设是结构化数组，直接读取列
+        plaintexts = metadata['plaintext'][:NUM_TRACES]  # Shape: (N, 16)
+        keys = metadata['key'][:NUM_TRACES]              # Shape: (N, 16)
+        
+    except Exception as e:
+        print(f"Error loading data: {e}")
+        return
+
+    print(f"[*] Traces shape: {traces.shape}")
+    print("[*] 开始 CPA 分析...")
+    print("-" * 50)
+    print(f"{'Byte Idx':<10} | {'Max Corr (Plaintext)':<25} | {'Max Corr (Sbox)':<25}")
+    print("-" * 50)
+
+    best_byte_p = -1
+    max_corr_p = 0
+    
+    best_byte_s = -1
+    max_corr_s = 0
+
+    # 遍历所有 16 个字节
+    for byte_idx in range(16):
+        # 1. 攻击 Plaintext HW
+        p_target = plaintexts[:, byte_idx]
+        corr_p = calculate_cpa(traces, p_target)
+        max_c_p = np.max(np.abs(corr_p))
+        
+        # 2. 攻击 Sbox Output HW
+        k_target = keys[:, byte_idx]
+        sbox_target = SBOX[p_target ^ k_target]
+        corr_s = calculate_cpa(traces, sbox_target)
+        max_c_s = np.max(np.abs(corr_s))
+        
+        print(f"{byte_idx:<10} | {max_c_p:.6f} {'(*)' if max_c_p > 0.1 else '':<10} | {max_c_s:.6f} {'(*)' if max_c_s > 0.05 else ''}")
+
+        if max_c_p > max_corr_p:
+            max_corr_p = max_c_p
+            best_byte_p = byte_idx
+            
+        if max_c_s > max_corr_s:
+            max_corr_s = max_c_s
+            best_byte_s = byte_idx
+
+    print("-" * 50)
+    print(f"结论预测:")
+    print(f"1. 基于明文泄露 (Plaintext Leakage): 最强字节是 Index {best_byte_p} (Corr: {max_corr_p:.4f})")
+    print(f"2. 基于 Sbox 泄露 (Sbox Leakage)  : 最强字节是 Index {best_byte_s} (Corr: {max_corr_s:.4f})")
+    
+    if best_byte_p == best_byte_s:
+        print(f"\n✅ 毫无疑问，你应该将 target_byte 设置为: {best_byte_p}")
+    else:
+        print(f"\n⚠️ 结果不一致。通常优先相信 Sbox 泄露（因为它是攻击目标）。")
+        print(f"建议优先尝试 Index {best_byte_s}，如果不行再试 Index {best_byte_p}")
+
+if __name__ == "__main__":
+    main()

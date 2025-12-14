@@ -1,0 +1,2 @@
+model_checkpoint_path: "trans_ascadv2-2"
+all_model_checkpoint_paths: "trans_ascadv2-2"

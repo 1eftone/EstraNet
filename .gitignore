@@ -1,0 +1,10 @@
+# Ignore Datasets
+*.h5
+*.npy
+*.npz
+datasets/
+
+__pycache__/
+*.pyc
+checkpoints_ascadv2/
+results_ascadv2/*.pkl
