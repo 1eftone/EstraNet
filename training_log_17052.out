@@ -1,0 +1,15 @@
+==========================================================
+Job Started at Sun Dec 14 15:21:02 UTC 2025
+Job running on node gpu-6000ada-3.cluster02.eee.ntu.edu.sg
+==========================================================
+Which python: /home/e240023/.conda/envs/estranet_final/bin/python
+Using python: python
+Calculating mean and std for normalization...
+Stats calculated. (Normalization will apply on-the-fly)
+Calculating labels for Target Byte: 1
+Calculating mean and std for normalization...
+Stats calculated. (Normalization will apply on-the-fly)
+Calculating labels for Target Byte: 1
+==========================================================
+Job Finished at Sun Dec 14 16:57:45 UTC 2025
+==========================================================

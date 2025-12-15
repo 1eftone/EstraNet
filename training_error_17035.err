@@ -1,0 +1,146 @@
+2025-12-14 13:03:26.520644: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-12-14 13:03:28.537583: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-12-14 13:03:32.462248: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-14 13:03:32.802048: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-14 13:03:32.803312: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+INFO:tensorflow:
+I1214 13:03:32.804525 126577829128000 train_trans.py:382] 
+INFO:tensorflow:
+I1214 13:03:32.804702 126577829128000 train_trans.py:383] 
+INFO:tensorflow:use_tpu               : False
+I1214 13:03:32.804738 126577829128000 train_trans.py:384] use_tpu               : False
+INFO:tensorflow:data_path             : /home/e240023/EstraNet/datasets/ascadv2-extracted.h5
+I1214 13:03:32.804767 126577829128000 train_trans.py:385] data_path             : /home/e240023/EstraNet/datasets/ascadv2-extracted.h5
+INFO:tensorflow:dataset               : ASCADv2
+I1214 13:03:32.804810 126577829128000 train_trans.py:386] dataset               : ASCADv2
+INFO:tensorflow:checkpoint_dir        : ./checkpoints_ascadv2
+I1214 13:03:32.804836 126577829128000 train_trans.py:387] checkpoint_dir        : ./checkpoints_ascadv2
+INFO:tensorflow:checkpoint_idx        : 0
+I1214 13:03:32.804862 126577829128000 train_trans.py:388] checkpoint_idx        : 0
+INFO:tensorflow:warm_start            : False
+I1214 13:03:32.804888 126577829128000 train_trans.py:389] warm_start            : False
+INFO:tensorflow:result_path           : results_ascadv2
+I1214 13:03:32.804912 126577829128000 train_trans.py:390] result_path           : results_ascadv2
+INFO:tensorflow:do_train              : True
+I1214 13:03:32.804935 126577829128000 train_trans.py:391] do_train              : True
+INFO:tensorflow:learning_rate         : 0.00025
+I1214 13:03:32.804963 126577829128000 train_trans.py:392] learning_rate         : 0.00025
+INFO:tensorflow:clip                  : 0.25
+I1214 13:03:32.804989 126577829128000 train_trans.py:393] clip                  : 0.25
+INFO:tensorflow:min_lr_ratio          : 0.004
+I1214 13:03:32.805014 126577829128000 train_trans.py:394] min_lr_ratio          : 0.004
+INFO:tensorflow:warmup_steps          : 2000
+I1214 13:03:32.805038 126577829128000 train_trans.py:395] warmup_steps          : 2000
+INFO:tensorflow:input_length          : 15000
+I1214 13:03:32.805062 126577829128000 train_trans.py:396] input_length          : 15000
+INFO:tensorflow:data_desync           : 50
+I1214 13:03:32.805085 126577829128000 train_trans.py:397] data_desync           : 50
+INFO:tensorflow:train_batch_size      : 16
+I1214 13:03:32.805109 126577829128000 train_trans.py:398] train_batch_size      : 16
+INFO:tensorflow:eval_batch_size       : 16
+I1214 13:03:32.805133 126577829128000 train_trans.py:399] eval_batch_size       : 16
+INFO:tensorflow:train_steps           : 400000
+I1214 13:03:32.805156 126577829128000 train_trans.py:400] train_steps           : 400000
+INFO:tensorflow:iterations            : 5000
+I1214 13:03:32.805180 126577829128000 train_trans.py:401] iterations            : 5000
+INFO:tensorflow:save_steps            : 10000
+I1214 13:03:32.805209 126577829128000 train_trans.py:402] save_steps            : 10000
+INFO:tensorflow:n_layer               : 2
+I1214 13:03:32.805235 126577829128000 train_trans.py:403] n_layer               : 2
+INFO:tensorflow:d_model               : 128
+I1214 13:03:32.805258 126577829128000 train_trans.py:404] d_model               : 128
+INFO:tensorflow:d_head                : 32
+I1214 13:03:32.805282 126577829128000 train_trans.py:405] d_head                : 32
+INFO:tensorflow:n_head                : 8
+I1214 13:03:32.805304 126577829128000 train_trans.py:406] n_head                : 8
+INFO:tensorflow:d_inner               : 256
+I1214 13:03:32.805328 126577829128000 train_trans.py:407] d_inner               : 256
+INFO:tensorflow:n_head_softmax        : 8
+I1214 13:03:32.805353 126577829128000 train_trans.py:408] n_head_softmax        : 8
+INFO:tensorflow:d_head_softmax        : 16
+I1214 13:03:32.805377 126577829128000 train_trans.py:409] d_head_softmax        : 16
+INFO:tensorflow:dropout               : 0.05
+I1214 13:03:32.805401 126577829128000 train_trans.py:410] dropout               : 0.05
+INFO:tensorflow:conv_kernel_size      : 3
+I1214 13:03:32.805425 126577829128000 train_trans.py:411] conv_kernel_size      : 3
+INFO:tensorflow:n_conv_layer          : 2
+I1214 13:03:32.805449 126577829128000 train_trans.py:412] n_conv_layer          : 2
+INFO:tensorflow:pool_size             : 10
+I1214 13:03:32.805473 126577829128000 train_trans.py:413] pool_size             : 10
+INFO:tensorflow:d_kernel_map          : 512
+I1214 13:03:32.805496 126577829128000 train_trans.py:414] d_kernel_map          : 512
+INFO:tensorflow:beta_hat_2            : 225
+I1214 13:03:32.805521 126577829128000 train_trans.py:415] beta_hat_2            : 225
+INFO:tensorflow:model_normalization   : preLC
+I1214 13:03:32.805543 126577829128000 train_trans.py:416] model_normalization   : preLC
+INFO:tensorflow:head_initialization   : forward
+I1214 13:03:32.805575 126577829128000 train_trans.py:417] head_initialization   : forward
+INFO:tensorflow:softmax_attn          : True
+I1214 13:03:32.805599 126577829128000 train_trans.py:418] softmax_attn          : True
+INFO:tensorflow:max_eval_batch        : 100
+I1214 13:03:32.805623 126577829128000 train_trans.py:419] max_eval_batch        : 100
+INFO:tensorflow:output_attn           : False
+I1214 13:03:32.805647 126577829128000 train_trans.py:420] output_attn           : False
+INFO:tensorflow:
+I1214 13:03:32.805669 126577829128000 train_trans.py:421] 
+INFO:tensorflow:
+I1214 13:03:32.805691 126577829128000 train_trans.py:422] 
+INFO:tensorflow:Number of accelerators: 1
+I1214 13:04:44.138397 126577829128000 train_trans.py:471] Number of accelerators: 1
+INFO:tensorflow:num of train batches 31250
+I1214 13:04:44.139591 126577829128000 train_trans.py:486] num of train batches 31250
+INFO:tensorflow:num of test batches 625
+I1214 13:04:44.139625 126577829128000 train_trans.py:487] num of test batches 625
+2025-12-14 13:04:44.347593: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-14 13:04:44.349243: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-14 13:04:44.350460: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-14 13:04:44.439050: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-14 13:04:44.440207: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-14 13:04:44.441161: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-14 13:04:44.442076: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 46550 MB memory:  -> device: 0, name: NVIDIA RTX 6000 Ada Generation, pci bus id: 0000:00:11.0, compute capability: 8.9
+2025-12-14 13:04:51.626092: I tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:606] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+/home/e240023/.conda/envs/estranet_final/lib/python3.8/site-packages/keras/src/initializers/initializers.py:120: UserWarning: The initializer RandomUniform is unseeded and being called multiple times, which will return identical values each time (even if the initializer is unseeded). Please update your code to provide a seed to the initializer, or avoid using the same initializer instance more than once.
+  warnings.warn(
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-1
+I1214 13:04:51.763730 126577829128000 train_trans.py:226] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-1
+INFO:tensorflow:Starting training ... 
+I1214 13:04:51.767359 126577829128000 train_trans.py:284] Starting training ... 
+2025-12-14 13:04:57.453549: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous recv item cancelled. Key hash: 4273708258706638409
+2025-12-14 13:04:57.453602: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous recv item cancelled. Key hash: 12545954699286366905
+2025-12-14 13:04:57.453613: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous recv item cancelled. Key hash: 6968314087329328013
+2025-12-14 13:04:57.453621: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous recv item cancelled. Key hash: 7633939432952253445
+2025-12-14 13:04:57.453629: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous recv item cancelled. Key hash: 3823777965658033707
+2025-12-14 13:04:57.453636: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous recv item cancelled. Key hash: 7981481153780536020
+2025-12-14 13:04:57.453643: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous recv item cancelled. Key hash: 16893251125045208236
+2025-12-14 13:04:57.453650: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous recv item cancelled. Key hash: 15520061384906462902
+2025-12-14 13:04:57.453711: I tensorflow/core/framework/local_rendezvous.cc:405] Local rendezvous recv item cancelled. Key hash: 1137092971530907288
+Traceback (most recent call last):
+  File "train_trans.py", line 541, in <module>
+    tf.compat.v1.app.run()
+  File "/home/e240023/.conda/envs/estranet_final/lib/python3.8/site-packages/tensorflow/python/platform/app.py", line 36, in run
+    _run(main=main, argv=argv, flags_parser=_parse_flags_tolerate_undef)
+  File "/home/e240023/.conda/envs/estranet_final/lib/python3.8/site-packages/absl/app.py", line 316, in run
+    _run_main(main, args)
+  File "/home/e240023/.conda/envs/estranet_final/lib/python3.8/site-packages/absl/app.py", line 261, in _run_main
+    sys.exit(main(argv))
+  File "train_trans.py", line 489, in main
+    train(train_data.GetTFRecords(FLAGS.train_batch_size, training=True), \
+  File "train_trans.py", line 289, in train
+    train_steps(train_iter, tf.convert_to_tensor(FLAGS.iterations), \
+  File "/home/e240023/.conda/envs/estranet_final/lib/python3.8/site-packages/tensorflow/python/util/traceback_utils.py", line 153, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "/home/e240023/.conda/envs/estranet_final/lib/python3.8/site-packages/tensorflow/python/eager/execute.py", line 53, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Graph execution error:
+
+2 root error(s) found.
+  (0) INVALID_ARGUMENT:  Expected size[1] in [0, 14991], but got 15000
+	 [[{{node Slice}}]]
+	 [[while/body/_1/while/IteratorGetNext]]
+	 [[while/body/_1/while/IteratorGetNext/_32]]
+  (1) INVALID_ARGUMENT:  Expected size[1] in [0, 14991], but got 15000
+	 [[{{node Slice}}]]
+	 [[while/body/_1/while/IteratorGetNext]]
+0 successful operations.
+0 derived errors ignored. [Op:__inference_train_steps_6335]

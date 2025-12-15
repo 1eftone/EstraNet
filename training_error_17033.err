@@ -1,0 +1,90 @@
+2025-12-14 11:28:31.518509: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-12-14 11:28:33.504625: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-12-14 11:28:37.912552: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-14 11:28:38.232544: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-14 11:28:38.233664: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+INFO:tensorflow:
+I1214 11:28:38.234748 130805687146304 train_trans.py:382] 
+INFO:tensorflow:
+I1214 11:28:38.234904 130805687146304 train_trans.py:383] 
+INFO:tensorflow:use_tpu               : False
+I1214 11:28:38.234936 130805687146304 train_trans.py:384] use_tpu               : False
+INFO:tensorflow:data_path             : /home/e240023/EstraNet/datasets/ascadv2-extracted.h5
+I1214 11:28:38.234960 130805687146304 train_trans.py:385] data_path             : /home/e240023/EstraNet/datasets/ascadv2-extracted.h5
+INFO:tensorflow:dataset               : ASCADv2
+I1214 11:28:38.234982 130805687146304 train_trans.py:386] dataset               : ASCADv2
+INFO:tensorflow:checkpoint_dir        : ./checkpoints_ascadv2
+I1214 11:28:38.235002 130805687146304 train_trans.py:387] checkpoint_dir        : ./checkpoints_ascadv2
+INFO:tensorflow:checkpoint_idx        : 0
+I1214 11:28:38.235023 130805687146304 train_trans.py:388] checkpoint_idx        : 0
+INFO:tensorflow:warm_start            : False
+I1214 11:28:38.235042 130805687146304 train_trans.py:389] warm_start            : False
+INFO:tensorflow:result_path           : results_ascadv2
+I1214 11:28:38.235062 130805687146304 train_trans.py:390] result_path           : results_ascadv2
+INFO:tensorflow:do_train              : True
+I1214 11:28:38.235081 130805687146304 train_trans.py:391] do_train              : True
+INFO:tensorflow:learning_rate         : 0.00025
+I1214 11:28:38.235103 130805687146304 train_trans.py:392] learning_rate         : 0.00025
+INFO:tensorflow:clip                  : 0.25
+I1214 11:28:38.235123 130805687146304 train_trans.py:393] clip                  : 0.25
+INFO:tensorflow:min_lr_ratio          : 0.004
+I1214 11:28:38.235142 130805687146304 train_trans.py:394] min_lr_ratio          : 0.004
+INFO:tensorflow:warmup_steps          : 2000
+I1214 11:28:38.235167 130805687146304 train_trans.py:395] warmup_steps          : 2000
+INFO:tensorflow:input_length          : 15000
+I1214 11:28:38.235187 130805687146304 train_trans.py:396] input_length          : 15000
+INFO:tensorflow:data_desync           : 50
+I1214 11:28:38.235205 130805687146304 train_trans.py:397] data_desync           : 50
+INFO:tensorflow:train_batch_size      : 16
+I1214 11:28:38.235224 130805687146304 train_trans.py:398] train_batch_size      : 16
+INFO:tensorflow:eval_batch_size       : 16
+I1214 11:28:38.235243 130805687146304 train_trans.py:399] eval_batch_size       : 16
+INFO:tensorflow:train_steps           : 400000
+I1214 11:28:38.235262 130805687146304 train_trans.py:400] train_steps           : 400000
+INFO:tensorflow:iterations            : 5000
+I1214 11:28:38.235283 130805687146304 train_trans.py:401] iterations            : 5000
+INFO:tensorflow:save_steps            : 10000
+I1214 11:28:38.235307 130805687146304 train_trans.py:402] save_steps            : 10000
+INFO:tensorflow:n_layer               : 2
+I1214 11:28:38.235327 130805687146304 train_trans.py:403] n_layer               : 2
+INFO:tensorflow:d_model               : 128
+I1214 11:28:38.235345 130805687146304 train_trans.py:404] d_model               : 128
+INFO:tensorflow:d_head                : 32
+I1214 11:28:38.235364 130805687146304 train_trans.py:405] d_head                : 32
+INFO:tensorflow:n_head                : 8
+I1214 11:28:38.235382 130805687146304 train_trans.py:406] n_head                : 8
+INFO:tensorflow:d_inner               : 256
+I1214 11:28:38.235401 130805687146304 train_trans.py:407] d_inner               : 256
+INFO:tensorflow:n_head_softmax        : 8
+I1214 11:28:38.235420 130805687146304 train_trans.py:408] n_head_softmax        : 8
+INFO:tensorflow:d_head_softmax        : 16
+I1214 11:28:38.235439 130805687146304 train_trans.py:409] d_head_softmax        : 16
+INFO:tensorflow:dropout               : 0.05
+I1214 11:28:38.235458 130805687146304 train_trans.py:410] dropout               : 0.05
+INFO:tensorflow:conv_kernel_size      : 3
+I1214 11:28:38.235476 130805687146304 train_trans.py:411] conv_kernel_size      : 3
+INFO:tensorflow:n_conv_layer          : 2
+I1214 11:28:38.235494 130805687146304 train_trans.py:412] n_conv_layer          : 2
+INFO:tensorflow:pool_size             : 10
+I1214 11:28:38.235512 130805687146304 train_trans.py:413] pool_size             : 10
+INFO:tensorflow:d_kernel_map          : 512
+I1214 11:28:38.235531 130805687146304 train_trans.py:414] d_kernel_map          : 512
+INFO:tensorflow:beta_hat_2            : 225
+I1214 11:28:38.235550 130805687146304 train_trans.py:415] beta_hat_2            : 225
+INFO:tensorflow:model_normalization   : preLC
+I1214 11:28:38.235569 130805687146304 train_trans.py:416] model_normalization   : preLC
+INFO:tensorflow:head_initialization   : forward
+I1214 11:28:38.235588 130805687146304 train_trans.py:417] head_initialization   : forward
+INFO:tensorflow:softmax_attn          : True
+I1214 11:28:38.235607 130805687146304 train_trans.py:418] softmax_attn          : True
+INFO:tensorflow:max_eval_batch        : 100
+I1214 11:28:38.235626 130805687146304 train_trans.py:419] max_eval_batch        : 100
+INFO:tensorflow:output_attn           : False
+I1214 11:28:38.235648 130805687146304 train_trans.py:420] output_attn           : False
+INFO:tensorflow:
+I1214 11:28:38.235674 130805687146304 train_trans.py:421] 
+INFO:tensorflow:
+I1214 11:28:38.235692 130805687146304 train_trans.py:422] 
+run_trans_ascadv2.sh: line 141: 240364 Killed                  python train_trans.py --use_tpu=${USE_TPU} --data_path=${DATA_PATH} --dataset=${DATASET} --checkpoint_dir=${CKP_DIR} --warm_start=${WARM_START} --result_path=${RESULT_PATH} --learning_rate=${LEARNING_RATE} --clip=${CLIP} --min_lr_ratio=${MIN_LR_RATIO} --warmup_steps=${WARMUP_STEPS} --input_length=${INPUT_LENGTH} --data_desync=${DATA_DESYNC} --train_batch_size=${TRAIN_BSZ} --eval_batch_size=${EVAL_BSZ} --train_steps=${TRAIN_STEPS} --iterations=${ITERATIONS} --save_steps=${SAVE_STEPS} --n_layer=${N_LAYER} --d_model=${D_MODEL} --d_head=${D_HEAD} --n_head=${N_HEAD} --d_head=${D_HEAD} --d_inner=${D_INNER} --n_head_softmax=${N_HEAD_SM} --d_head_softmax=${D_HEAD_SM} --dropout=${DROPOUT} --conv_kernel_size=${CONV_KERNEL_SIZE} --n_conv_layer=${N_CONV_LAYER} --pool_size=${POOL_SIZE} --d_kernel_map=${D_KERNEL_MAP} --beta_hat_2=${BETA_HAT_2} --model_normalization=${MODEL_NORM} --head_initialization=${HEAD_INIT} --softmax_attn=${SM_ATTN} --max_eval_batch=${MAX_EVAL_BATCH} --do_train=True
+slurmstepd-gpu-6000ada-3: error: Detected 1 oom_kill event in StepId=17033.batch. Some of the step tasks have been OOM Killed.
