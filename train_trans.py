@@ -425,6 +425,12 @@ def print_hyperparams():
 
 def main(unused_argv):
     del unused_argv  # Unused
+    # 【新增】强制 TensorFlow 使用 Eager 模式运行所有函数
+    # 这会解决 fast_attention.py 在 Graph 模式下的 reshape/shape 问题
+    tf.config.run_functions_eagerly(True) 
+
+    print_hyperparams()
+    # ... (其余代码保持不变)
 
     print_hyperparams()
 

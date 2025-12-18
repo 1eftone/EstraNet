@@ -47,6 +47,11 @@ class Dataset:
         self.std = np.std(self.traces, axis=0, keepdims=True).astype(np.float32)
         self.std[self.std == 0] = 1.0
         print("Stats calculated. (Normalization will apply on-the-fly)")
+        # ... 在计算完 mean 和 std 之后 ...
+        print(f"[DEBUG] Mean range: {self.mean.min()} ~ {self.mean.max()}")
+        print(f"[DEBUG] Std  range: {self.std.min()} ~ {self.std.max()}")
+        if self.std.min() < 1e-6:
+            print("⚠️ 警告: Std 有极小值，可能会导致梯度爆炸！")
 
         # 动态获取 Plaintext 和 Key
         self.plaintexts = self.GetPlaintexts(corpus[split_key]['metadata'])

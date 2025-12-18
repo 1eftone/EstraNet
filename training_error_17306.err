@@ -1,0 +1,495 @@
+2025-12-16 04:54:06.602241: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-12-16 04:54:08.639008: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-12-16 04:54:12.883451: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-16 04:54:13.205578: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-16 04:54:13.206749: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+INFO:tensorflow:
+I1216 04:54:13.207859 133272504153920 train_trans.py:382] 
+INFO:tensorflow:
+I1216 04:54:13.208009 133272504153920 train_trans.py:383] 
+INFO:tensorflow:use_tpu               : False
+I1216 04:54:13.208042 133272504153920 train_trans.py:384] use_tpu               : False
+INFO:tensorflow:data_path             : /home/e240023/EstraNet/datasets/ascadv2-extracted.h5
+I1216 04:54:13.208067 133272504153920 train_trans.py:385] data_path             : /home/e240023/EstraNet/datasets/ascadv2-extracted.h5
+INFO:tensorflow:dataset               : ASCADv2
+I1216 04:54:13.208091 133272504153920 train_trans.py:386] dataset               : ASCADv2
+INFO:tensorflow:checkpoint_dir        : ./checkpoints_ascadv2
+I1216 04:54:13.208113 133272504153920 train_trans.py:387] checkpoint_dir        : ./checkpoints_ascadv2
+INFO:tensorflow:checkpoint_idx        : 0
+I1216 04:54:13.208137 133272504153920 train_trans.py:388] checkpoint_idx        : 0
+INFO:tensorflow:warm_start            : False
+I1216 04:54:13.208158 133272504153920 train_trans.py:389] warm_start            : False
+INFO:tensorflow:result_path           : results_ascadv2
+I1216 04:54:13.208179 133272504153920 train_trans.py:390] result_path           : results_ascadv2
+INFO:tensorflow:do_train              : True
+I1216 04:54:13.208200 133272504153920 train_trans.py:391] do_train              : True
+INFO:tensorflow:learning_rate         : 0.0005
+I1216 04:54:13.208222 133272504153920 train_trans.py:392] learning_rate         : 0.0005
+INFO:tensorflow:clip                  : 5.0
+I1216 04:54:13.208242 133272504153920 train_trans.py:393] clip                  : 5.0
+INFO:tensorflow:min_lr_ratio          : 0.004
+I1216 04:54:13.208262 133272504153920 train_trans.py:394] min_lr_ratio          : 0.004
+INFO:tensorflow:warmup_steps          : 5000
+I1216 04:54:13.208281 133272504153920 train_trans.py:395] warmup_steps          : 5000
+INFO:tensorflow:input_length          : 15000
+I1216 04:54:13.208300 133272504153920 train_trans.py:396] input_length          : 15000
+INFO:tensorflow:data_desync           : 0
+I1216 04:54:13.208319 133272504153920 train_trans.py:397] data_desync           : 0
+INFO:tensorflow:train_batch_size      : 32
+I1216 04:54:13.208345 133272504153920 train_trans.py:398] train_batch_size      : 32
+INFO:tensorflow:eval_batch_size       : 32
+I1216 04:54:13.208365 133272504153920 train_trans.py:399] eval_batch_size       : 32
+INFO:tensorflow:train_steps           : 400000
+I1216 04:54:13.208384 133272504153920 train_trans.py:400] train_steps           : 400000
+INFO:tensorflow:iterations            : 5000
+I1216 04:54:13.208403 133272504153920 train_trans.py:401] iterations            : 5000
+INFO:tensorflow:save_steps            : 10000
+I1216 04:54:13.208427 133272504153920 train_trans.py:402] save_steps            : 10000
+INFO:tensorflow:n_layer               : 2
+I1216 04:54:13.208446 133272504153920 train_trans.py:403] n_layer               : 2
+INFO:tensorflow:d_model               : 128
+I1216 04:54:13.208466 133272504153920 train_trans.py:404] d_model               : 128
+INFO:tensorflow:d_head                : 32
+I1216 04:54:13.208485 133272504153920 train_trans.py:405] d_head                : 32
+INFO:tensorflow:n_head                : 8
+I1216 04:54:13.208504 133272504153920 train_trans.py:406] n_head                : 8
+INFO:tensorflow:d_inner               : 256
+I1216 04:54:13.208524 133272504153920 train_trans.py:407] d_inner               : 256
+INFO:tensorflow:n_head_softmax        : 8
+I1216 04:54:13.208544 133272504153920 train_trans.py:408] n_head_softmax        : 8
+INFO:tensorflow:d_head_softmax        : 16
+I1216 04:54:13.208563 133272504153920 train_trans.py:409] d_head_softmax        : 16
+INFO:tensorflow:dropout               : 0.05
+I1216 04:54:13.208583 133272504153920 train_trans.py:410] dropout               : 0.05
+INFO:tensorflow:conv_kernel_size      : 3
+I1216 04:54:13.208602 133272504153920 train_trans.py:411] conv_kernel_size      : 3
+INFO:tensorflow:n_conv_layer          : 2
+I1216 04:54:13.208621 133272504153920 train_trans.py:412] n_conv_layer          : 2
+INFO:tensorflow:pool_size             : 4
+I1216 04:54:13.208640 133272504153920 train_trans.py:413] pool_size             : 4
+INFO:tensorflow:d_kernel_map          : 512
+I1216 04:54:13.208659 133272504153920 train_trans.py:414] d_kernel_map          : 512
+INFO:tensorflow:beta_hat_2            : 225
+I1216 04:54:13.208677 133272504153920 train_trans.py:415] beta_hat_2            : 225
+INFO:tensorflow:model_normalization   : preLC
+I1216 04:54:13.208697 133272504153920 train_trans.py:416] model_normalization   : preLC
+INFO:tensorflow:head_initialization   : forward
+I1216 04:54:13.208715 133272504153920 train_trans.py:417] head_initialization   : forward
+INFO:tensorflow:softmax_attn          : True
+I1216 04:54:13.208735 133272504153920 train_trans.py:418] softmax_attn          : True
+INFO:tensorflow:max_eval_batch        : 100
+I1216 04:54:13.208755 133272504153920 train_trans.py:419] max_eval_batch        : 100
+INFO:tensorflow:output_attn           : False
+I1216 04:54:13.208783 133272504153920 train_trans.py:420] output_attn           : False
+INFO:tensorflow:
+I1216 04:54:13.208802 133272504153920 train_trans.py:421] 
+INFO:tensorflow:
+I1216 04:54:13.208821 133272504153920 train_trans.py:422] 
+INFO:tensorflow:
+I1216 04:54:13.208838 133272504153920 train_trans.py:382] 
+INFO:tensorflow:
+I1216 04:54:13.208856 133272504153920 train_trans.py:383] 
+INFO:tensorflow:use_tpu               : False
+I1216 04:54:13.208874 133272504153920 train_trans.py:384] use_tpu               : False
+INFO:tensorflow:data_path             : /home/e240023/EstraNet/datasets/ascadv2-extracted.h5
+I1216 04:54:13.208894 133272504153920 train_trans.py:385] data_path             : /home/e240023/EstraNet/datasets/ascadv2-extracted.h5
+INFO:tensorflow:dataset               : ASCADv2
+I1216 04:54:13.208912 133272504153920 train_trans.py:386] dataset               : ASCADv2
+INFO:tensorflow:checkpoint_dir        : ./checkpoints_ascadv2
+I1216 04:54:13.208930 133272504153920 train_trans.py:387] checkpoint_dir        : ./checkpoints_ascadv2
+INFO:tensorflow:checkpoint_idx        : 0
+I1216 04:54:13.208949 133272504153920 train_trans.py:388] checkpoint_idx        : 0
+INFO:tensorflow:warm_start            : False
+I1216 04:54:13.208968 133272504153920 train_trans.py:389] warm_start            : False
+INFO:tensorflow:result_path           : results_ascadv2
+I1216 04:54:13.208986 133272504153920 train_trans.py:390] result_path           : results_ascadv2
+INFO:tensorflow:do_train              : True
+I1216 04:54:13.209005 133272504153920 train_trans.py:391] do_train              : True
+INFO:tensorflow:learning_rate         : 0.0005
+I1216 04:54:13.209024 133272504153920 train_trans.py:392] learning_rate         : 0.0005
+INFO:tensorflow:clip                  : 5.0
+I1216 04:54:13.209044 133272504153920 train_trans.py:393] clip                  : 5.0
+INFO:tensorflow:min_lr_ratio          : 0.004
+I1216 04:54:13.209063 133272504153920 train_trans.py:394] min_lr_ratio          : 0.004
+INFO:tensorflow:warmup_steps          : 5000
+I1216 04:54:13.209081 133272504153920 train_trans.py:395] warmup_steps          : 5000
+INFO:tensorflow:input_length          : 15000
+I1216 04:54:13.209102 133272504153920 train_trans.py:396] input_length          : 15000
+INFO:tensorflow:data_desync           : 0
+I1216 04:54:13.209120 133272504153920 train_trans.py:397] data_desync           : 0
+INFO:tensorflow:train_batch_size      : 32
+I1216 04:54:13.209139 133272504153920 train_trans.py:398] train_batch_size      : 32
+INFO:tensorflow:eval_batch_size       : 32
+I1216 04:54:13.209158 133272504153920 train_trans.py:399] eval_batch_size       : 32
+INFO:tensorflow:train_steps           : 400000
+I1216 04:54:13.209177 133272504153920 train_trans.py:400] train_steps           : 400000
+INFO:tensorflow:iterations            : 5000
+I1216 04:54:13.209195 133272504153920 train_trans.py:401] iterations            : 5000
+INFO:tensorflow:save_steps            : 10000
+I1216 04:54:13.209214 133272504153920 train_trans.py:402] save_steps            : 10000
+INFO:tensorflow:n_layer               : 2
+I1216 04:54:13.209232 133272504153920 train_trans.py:403] n_layer               : 2
+INFO:tensorflow:d_model               : 128
+I1216 04:54:13.209251 133272504153920 train_trans.py:404] d_model               : 128
+INFO:tensorflow:d_head                : 32
+I1216 04:54:13.209269 133272504153920 train_trans.py:405] d_head                : 32
+INFO:tensorflow:n_head                : 8
+I1216 04:54:13.209288 133272504153920 train_trans.py:406] n_head                : 8
+INFO:tensorflow:d_inner               : 256
+I1216 04:54:13.209306 133272504153920 train_trans.py:407] d_inner               : 256
+INFO:tensorflow:n_head_softmax        : 8
+I1216 04:54:13.209324 133272504153920 train_trans.py:408] n_head_softmax        : 8
+INFO:tensorflow:d_head_softmax        : 16
+I1216 04:54:13.209348 133272504153920 train_trans.py:409] d_head_softmax        : 16
+INFO:tensorflow:dropout               : 0.05
+I1216 04:54:13.209367 133272504153920 train_trans.py:410] dropout               : 0.05
+INFO:tensorflow:conv_kernel_size      : 3
+I1216 04:54:13.209388 133272504153920 train_trans.py:411] conv_kernel_size      : 3
+INFO:tensorflow:n_conv_layer          : 2
+I1216 04:54:13.209408 133272504153920 train_trans.py:412] n_conv_layer          : 2
+INFO:tensorflow:pool_size             : 4
+I1216 04:54:13.209426 133272504153920 train_trans.py:413] pool_size             : 4
+INFO:tensorflow:d_kernel_map          : 512
+I1216 04:54:13.209444 133272504153920 train_trans.py:414] d_kernel_map          : 512
+INFO:tensorflow:beta_hat_2            : 225
+I1216 04:54:13.209463 133272504153920 train_trans.py:415] beta_hat_2            : 225
+INFO:tensorflow:model_normalization   : preLC
+I1216 04:54:13.209484 133272504153920 train_trans.py:416] model_normalization   : preLC
+INFO:tensorflow:head_initialization   : forward
+I1216 04:54:13.209503 133272504153920 train_trans.py:417] head_initialization   : forward
+INFO:tensorflow:softmax_attn          : True
+I1216 04:54:13.209522 133272504153920 train_trans.py:418] softmax_attn          : True
+INFO:tensorflow:max_eval_batch        : 100
+I1216 04:54:13.209541 133272504153920 train_trans.py:419] max_eval_batch        : 100
+INFO:tensorflow:output_attn           : False
+I1216 04:54:13.209559 133272504153920 train_trans.py:420] output_attn           : False
+INFO:tensorflow:
+I1216 04:54:13.209577 133272504153920 train_trans.py:421] 
+INFO:tensorflow:
+I1216 04:54:13.209595 133272504153920 train_trans.py:422] 
+INFO:tensorflow:Number of accelerators: 1
+I1216 04:55:26.046345 133272504153920 train_trans.py:477] Number of accelerators: 1
+INFO:tensorflow:num of train batches 15625
+I1216 04:55:26.051482 133272504153920 train_trans.py:492] num of train batches 15625
+INFO:tensorflow:num of test batches 312
+I1216 04:55:26.051528 133272504153920 train_trans.py:493] num of test batches 312
+2025-12-16 04:55:26.266922: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-16 04:55:26.268630: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-16 04:55:26.270025: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-16 04:55:26.355144: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-16 04:55:26.356184: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-16 04:55:26.357152: I tensorflow/compiler/xla/stream_executor/cuda/cuda_gpu_executor.cc:995] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero. See more at https://github.com/torvalds/linux/blob/v6.0/Documentation/ABI/testing/sysfs-bus-pci#L344-L355
+2025-12-16 04:55:26.358184: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1639] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 46550 MB memory:  -> device: 0, name: NVIDIA RTX 6000 Ada Generation, pci bus id: 0000:00:10.0, compute capability: 8.9
+2025-12-16 04:55:33.420481: I tensorflow/compiler/xla/stream_executor/cuda/cuda_blas.cc:606] TensorFloat-32 will be used for the matrix multiplication. This will only be logged once.
+/home/e240023/.conda/envs/estranet_final/lib/python3.8/site-packages/tensorflow/python/data/ops/structured_function.py:265: UserWarning: Even though the `tf.config.experimental_run_functions_eagerly` option is set, this option does not apply to tf.data functions. To force eager execution of tf.data functions, please use `tf.data.experimental.enable_debug_mode()`.
+  warnings.warn(
+/home/e240023/.conda/envs/estranet_final/lib/python3.8/site-packages/keras/src/initializers/initializers.py:120: UserWarning: The initializer RandomUniform is unseeded and being called multiple times, which will return identical values each time (even if the initializer is unseeded). Please update your code to provide a seed to the initializer, or avoid using the same initializer instance more than once.
+  warnings.warn(
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-1
+I1216 04:55:33.562106 133272504153920 train_trans.py:226] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-1
+INFO:tensorflow:Starting training ... 
+I1216 04:55:33.565914 133272504153920 train_trans.py:284] Starting training ... 
+2025-12-16 04:55:36.905535: I tensorflow/compiler/xla/stream_executor/cuda/cuda_dnn.cc:432] Loaded cuDNN version 8600
+INFO:tensorflow:[  5000] | gnorm  0.18 lr  0.000500 | loss  5.55
+I1216 05:14:31.416064 133272504153920 train_trans.py:298] [  5000] | gnorm  0.18 lr  0.000500 | loss  5.55
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 05:14:42.094071 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 05:14:50.036805 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[ 10000] | gnorm  0.18 lr  0.000500 | loss  5.54
+I1216 05:33:43.565670 133272504153920 train_trans.py:298] [ 10000] | gnorm  0.18 lr  0.000500 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.55
+I1216 05:33:54.320875 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.55
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 05:34:02.208043 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-2
+I1216 05:34:02.282840 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-2
+INFO:tensorflow:[ 15000] | gnorm  0.18 lr  0.000499 | loss  5.54
+I1216 05:52:56.898448 133272504153920 train_trans.py:298] [ 15000] | gnorm  0.18 lr  0.000499 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 05:53:05.938641 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 05:53:13.798325 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[ 20000] | gnorm  0.18 lr  0.000498 | loss  5.54
+I1216 06:12:12.358442 133272504153920 train_trans.py:298] [ 20000] | gnorm  0.18 lr  0.000498 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 06:12:21.449637 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 06:12:29.358227 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-3
+I1216 06:12:29.422546 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-3
+INFO:tensorflow:[ 25000] | gnorm  0.19 lr  0.000497 | loss  5.54
+I1216 06:31:31.828666 133272504153920 train_trans.py:298] [ 25000] | gnorm  0.19 lr  0.000497 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.55
+I1216 06:31:40.877821 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.55
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 06:31:48.750615 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[ 30000] | gnorm  0.18 lr  0.000495 | loss  5.54
+I1216 06:50:50.435507 133272504153920 train_trans.py:298] [ 30000] | gnorm  0.18 lr  0.000495 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 06:50:59.402058 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 06:51:07.229237 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-4
+I1216 06:51:07.288747 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-4
+INFO:tensorflow:[ 35000] | gnorm  0.20 lr  0.000493 | loss  5.54
+I1216 07:10:04.560475 133272504153920 train_trans.py:298] [ 35000] | gnorm  0.20 lr  0.000493 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 07:10:13.587784 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 07:10:21.467145 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[ 40000] | gnorm  0.20 lr  0.000490 | loss  5.54
+I1216 07:29:21.196268 133272504153920 train_trans.py:298] [ 40000] | gnorm  0.20 lr  0.000490 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 07:29:30.228970 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 07:29:38.101208 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-5
+I1216 07:29:38.162209 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-5
+INFO:tensorflow:[ 45000] | gnorm  0.21 lr  0.000488 | loss  5.54
+I1216 07:48:39.000445 133272504153920 train_trans.py:298] [ 45000] | gnorm  0.21 lr  0.000488 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 07:48:48.008438 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 07:48:55.914190 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[ 50000] | gnorm  0.21 lr  0.000484 | loss  5.54
+I1216 08:07:53.681681 133272504153920 train_trans.py:298] [ 50000] | gnorm  0.21 lr  0.000484 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 08:08:02.825722 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 08:08:10.745314 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-6
+I1216 08:08:10.820528 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-6
+INFO:tensorflow:[ 55000] | gnorm  0.23 lr  0.000481 | loss  5.54
+I1216 08:27:09.549203 133272504153920 train_trans.py:298] [ 55000] | gnorm  0.23 lr  0.000481 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 08:27:18.676015 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 08:27:26.580426 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[ 60000] | gnorm  0.23 lr  0.000477 | loss  5.54
+I1216 08:46:29.737670 133272504153920 train_trans.py:298] [ 60000] | gnorm  0.23 lr  0.000477 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 08:46:38.754895 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 08:46:46.614445 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-7
+I1216 08:46:46.673216 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-7
+INFO:tensorflow:[ 65000] | gnorm  0.38 lr  0.000472 | loss  5.54
+I1216 09:05:50.055944 133272504153920 train_trans.py:298] [ 65000] | gnorm  0.38 lr  0.000472 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 09:05:59.174086 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 09:06:07.109812 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[ 70000] | gnorm  0.61 lr  0.000467 | loss  5.54
+I1216 09:25:09.069837 133272504153920 train_trans.py:298] [ 70000] | gnorm  0.61 lr  0.000467 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 09:25:18.114177 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 09:25:26.058226 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-8
+I1216 09:25:26.118617 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-8
+INFO:tensorflow:[ 75000] | gnorm  0.53 lr  0.000462 | loss  5.54
+I1216 09:44:29.845634 133272504153920 train_trans.py:298] [ 75000] | gnorm  0.53 lr  0.000462 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 09:44:38.961752 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 09:44:46.910485 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[ 80000] | gnorm  0.44 lr  0.000457 | loss  5.54
+I1216 10:03:43.041065 133272504153920 train_trans.py:298] [ 80000] | gnorm  0.44 lr  0.000457 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 10:03:52.029004 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 10:03:59.858036 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-9
+I1216 10:03:59.917593 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-9
+INFO:tensorflow:[ 85000] | gnorm  0.89 lr  0.000451 | loss  5.54
+I1216 10:22:57.266770 133272504153920 train_trans.py:298] [ 85000] | gnorm  0.89 lr  0.000451 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 10:23:06.360554 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 10:23:14.235541 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[ 90000] | gnorm  0.99 lr  0.000445 | loss  5.54
+I1216 10:42:07.290638 133272504153920 train_trans.py:298] [ 90000] | gnorm  0.99 lr  0.000445 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 10:42:16.347764 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 10:42:24.243555 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-10
+I1216 10:42:24.305794 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-10
+INFO:tensorflow:[ 95000] | gnorm  0.78 lr  0.000439 | loss  5.54
+I1216 11:01:22.168186 133272504153920 train_trans.py:298] [ 95000] | gnorm  0.78 lr  0.000439 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 11:01:31.219632 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 11:01:39.050292 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[100000] | gnorm  0.96 lr  0.000432 | loss  5.54
+I1216 11:20:33.461388 133272504153920 train_trans.py:298] [100000] | gnorm  0.96 lr  0.000432 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 11:20:42.540704 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 11:20:50.424374 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-11
+I1216 11:20:50.490565 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-11
+INFO:tensorflow:[105000] | gnorm  1.77 lr  0.000425 | loss  5.54
+I1216 11:39:46.400075 133272504153920 train_trans.py:298] [105000] | gnorm  1.77 lr  0.000425 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 11:39:55.427184 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 11:40:03.320800 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[110000] | gnorm  2.39 lr  0.000418 | loss  5.54
+I1216 11:58:56.923981 133272504153920 train_trans.py:298] [110000] | gnorm  2.39 lr  0.000418 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 11:59:05.972255 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 11:59:13.852227 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-12
+I1216 11:59:13.912346 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-12
+INFO:tensorflow:[115000] | gnorm  9.44 lr  0.000411 | loss  5.54
+I1216 12:18:06.703420 133272504153920 train_trans.py:298] [115000] | gnorm  9.44 lr  0.000411 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 12:18:15.815373 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.56
+I1216 12:18:23.709374 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.56
+INFO:tensorflow:[120000] | gnorm  7.09 lr  0.000403 | loss  5.54
+I1216 12:37:22.561022 133272504153920 train_trans.py:298] [120000] | gnorm  7.09 lr  0.000403 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 12:37:31.644362 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 12:37:39.502612 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-13
+I1216 12:37:39.561833 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-13
+INFO:tensorflow:[125000] | gnorm  2.82 lr  0.000395 | loss  5.54
+I1216 12:56:44.725144 133272504153920 train_trans.py:298] [125000] | gnorm  2.82 lr  0.000395 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 12:56:53.801085 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 12:57:01.678733 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[130000] | gnorm  2.84 lr  0.000387 | loss  5.54
+I1216 13:16:01.739825 133272504153920 train_trans.py:298] [130000] | gnorm  2.84 lr  0.000387 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 13:16:10.903930 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 13:16:18.858709 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-14
+I1216 13:16:18.931343 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-14
+INFO:tensorflow:[135000] | gnorm  1.24 lr  0.000378 | loss  5.54
+I1216 13:35:19.338282 133272504153920 train_trans.py:298] [135000] | gnorm  1.24 lr  0.000378 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 13:35:28.472459 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 13:35:36.388891 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[140000] | gnorm  1.08 lr  0.000370 | loss  5.54
+I1216 13:54:38.845796 133272504153920 train_trans.py:298] [140000] | gnorm  1.08 lr  0.000370 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 13:54:47.877356 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 13:54:55.827331 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-15
+I1216 13:54:55.888723 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-15
+INFO:tensorflow:[145000] | gnorm  1.64 lr  0.000361 | loss  5.54
+I1216 14:13:54.083614 133272504153920 train_trans.py:298] [145000] | gnorm  1.64 lr  0.000361 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 14:14:03.127878 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 14:14:11.053876 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[150000] | gnorm  1.57 lr  0.000352 | loss  5.54
+I1216 14:33:06.111620 133272504153920 train_trans.py:298] [150000] | gnorm  1.57 lr  0.000352 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 14:33:15.118555 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 14:33:22.969196 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-16
+I1216 14:33:23.049035 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-16
+INFO:tensorflow:[155000] | gnorm  1.82 lr  0.000343 | loss  5.54
+I1216 14:52:17.354356 133272504153920 train_trans.py:298] [155000] | gnorm  1.82 lr  0.000343 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.55
+I1216 14:52:26.375024 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.55
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 14:52:34.283123 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[160000] | gnorm  2.07 lr  0.000334 | loss  5.54
+I1216 15:11:27.332330 133272504153920 train_trans.py:298] [160000] | gnorm  2.07 lr  0.000334 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.55
+I1216 15:11:36.361343 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.55
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 15:11:44.240654 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-17
+I1216 15:11:44.297384 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-17
+INFO:tensorflow:[165000] | gnorm  2.06 lr  0.000324 | loss  5.54
+I1216 15:30:35.060054 133272504153920 train_trans.py:298] [165000] | gnorm  2.06 lr  0.000324 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 15:30:44.076981 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 15:30:52.257076 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[170000] | gnorm  2.81 lr  0.000315 | loss  5.54
+I1216 15:49:45.605510 133272504153920 train_trans.py:298] [170000] | gnorm  2.81 lr  0.000315 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.55
+I1216 15:49:54.633233 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.55
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 15:50:02.538592 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-18
+I1216 15:50:03.135336 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-18
+INFO:tensorflow:[175000] | gnorm  1.98 lr  0.000305 | loss  5.54
+I1216 16:08:53.222063 133272504153920 train_trans.py:298] [175000] | gnorm  1.98 lr  0.000305 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 16:09:02.176794 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 16:09:10.041443 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[180000] | gnorm  1.27 lr  0.000295 | loss  5.54
+I1216 16:28:00.492592 133272504153920 train_trans.py:298] [180000] | gnorm  1.27 lr  0.000295 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 16:28:11.168205 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 16:28:19.032612 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-19
+I1216 16:28:19.089555 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-19
+INFO:tensorflow:[185000] | gnorm  2.06 lr  0.000286 | loss  5.54
+I1216 16:47:09.352977 133272504153920 train_trans.py:298] [185000] | gnorm  2.06 lr  0.000286 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 16:47:18.403274 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 16:47:26.255392 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[190000] | gnorm  1.80 lr  0.000276 | loss  5.54
+I1216 17:06:18.504081 133272504153920 train_trans.py:298] [190000] | gnorm  1.80 lr  0.000276 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 17:06:27.521962 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 17:06:35.485005 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-20
+I1216 17:06:35.544342 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-20
+INFO:tensorflow:[195000] | gnorm  2.14 lr  0.000266 | loss  5.54
+I1216 17:25:28.496669 133272504153920 train_trans.py:298] [195000] | gnorm  2.14 lr  0.000266 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 17:25:37.519810 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 17:25:45.429694 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[200000] | gnorm  2.28 lr  0.000256 | loss  5.54
+I1216 17:44:37.238317 133272504153920 train_trans.py:298] [200000] | gnorm  2.28 lr  0.000256 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 17:44:46.239621 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 17:44:54.143212 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-21
+I1216 17:44:54.203813 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-21
+INFO:tensorflow:[205000] | gnorm  2.45 lr  0.000246 | loss  5.54
+I1216 18:03:46.202104 133272504153920 train_trans.py:298] [205000] | gnorm  2.45 lr  0.000246 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 18:03:55.227868 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 18:04:03.113545 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:[210000] | gnorm  2.17 lr  0.000236 | loss  5.54
+I1216 18:22:54.397959 133272504153920 train_trans.py:298] [210000] | gnorm  2.17 lr  0.000236 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 18:23:03.378988 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 18:23:11.278250 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+INFO:tensorflow:Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-22
+I1216 18:23:11.337766 133272504153920 train_trans.py:334] Model saved in path: ./checkpoints_ascadv2/trans_ascadv2-22
+INFO:tensorflow:[215000] | gnorm  1.97 lr  0.000226 | loss  5.54
+I1216 18:42:04.458658 133272504153920 train_trans.py:298] [215000] | gnorm  1.97 lr  0.000226 | loss  5.54
+INFO:tensorflow:Train batches[  100]                | loss  5.54
+I1216 18:42:13.490979 133272504153920 train_trans.py:314] Train batches[  100]                | loss  5.54
+INFO:tensorflow:Eval  batches[  100]                | loss  5.55
+I1216 18:42:21.345025 133272504153920 train_trans.py:324] Eval  batches[  100]                | loss  5.55
+run_trans_ascadv2.sh: line 141: 450336 Killed                  python train_trans.py --use_tpu=${USE_TPU} --data_path=${DATA_PATH} --dataset=${DATASET} --checkpoint_dir=${CKP_DIR} --warm_start=${WARM_START} --result_path=${RESULT_PATH} --learning_rate=${LEARNING_RATE} --clip=${CLIP} --min_lr_ratio=${MIN_LR_RATIO} --warmup_steps=${WARMUP_STEPS} --input_length=${INPUT_LENGTH} --data_desync=${DATA_DESYNC} --train_batch_size=${TRAIN_BSZ} --eval_batch_size=${EVAL_BSZ} --train_steps=${TRAIN_STEPS} --iterations=${ITERATIONS} --save_steps=${SAVE_STEPS} --n_layer=${N_LAYER} --d_model=${D_MODEL} --d_head=${D_HEAD} --n_head=${N_HEAD} --d_head=${D_HEAD} --d_inner=${D_INNER} --n_head_softmax=${N_HEAD_SM} --d_head_softmax=${D_HEAD_SM} --dropout=${DROPOUT} --conv_kernel_size=${CONV_KERNEL_SIZE} --n_conv_layer=${N_CONV_LAYER} --pool_size=${POOL_SIZE} --d_kernel_map=${D_KERNEL_MAP} --beta_hat_2=${BETA_HAT_2} --model_normalization=${MODEL_NORM} --head_initialization=${HEAD_INIT} --softmax_attn=${SM_ATTN} --max_eval_batch=${MAX_EVAL_BATCH} --do_train=True
+slurmstepd-gpu-6000ada-3: error: Detected 1 oom_kill event in StepId=17306.batch. Some of the step tasks have been OOM Killed.
